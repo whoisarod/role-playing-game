@@ -1,17 +1,30 @@
-document.getElementById("hero").innerHTML = `
-    <div class="character-card">
-        <h4 class="name"> Wizard </h4>
-        <img class="avatar" src="/Module 6/role-playing-game/images/wizard.png"/>
-        <p class="health">health: <b> 60 </b></p>
-        <div class="dice-container"><div class="dice"> 6 </div></div>
-    </div>
-`
+const hero = {
+    elementId: "hero",
+    name: "Wizard",
+    avatar: "images/wizard.png",
+    health: 60,
+    diceScore: 6
+}
 
-document.getElementById("monster").innerHTML = `
+const monster = {
+    elementId: "monster",
+    name: "Orc",
+    avatar: "images/orc.png",
+    health: 10,
+    diceScore: 4
+}
+
+function renderCharacter(data) {
+    const {elementId, name, avatar, health, diceScore} = data;
+    document.getElementById(elementId).innerHTML = `
     <div class="character-card">
-        <h4 class="name"> Orc </h4>
-        <img class="avatar" src="/Module 6/role-playing-game/images/orc.png"/>
-        <p class="health">health: <b> 10 </b></p>
-        <div class="dice-container"><div class="dice"> 4 </div></div>
+        <h4 class="name"> ${name} </h4>
+        <img class="avatar" src="${avatar}"/>
+        <p class="health">health: <b> ${health} </b></p>
+        <div class="dice-container"><div class="dice"> ${diceScore} </div></div>
     </div>
 `
+}
+
+renderCharacter(hero)
+renderCharacter(monster)
