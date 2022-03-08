@@ -20,7 +20,7 @@ function endGame() {
     const endEmoji = orc.dead & wizard.dead ? "☠️" 
         : orc.dead ? "🔮"
         : "☠️"
-        
+
     document.body.innerHTML = `
         <div class="end-game">
             <h2>Game Over</h2>
